@@ -12,11 +12,11 @@ end
 
 service "nginx" do
   supports :status => true, :restart => true, :reload => true
-  action [ :enable, :start ]
+  action [ :enable, :restart ]
 end
 
 template "nginx.conf" do
-  path "/etc/nginx/nginx.con"
+  path "/etc/nginx/nginx.conf"
   source "nginx.conf.erb"
   owner "root"
   group "root"
